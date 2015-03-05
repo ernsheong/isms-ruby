@@ -1,6 +1,8 @@
-# Isms::Ruby
+## isms-ruby
 
-TODO: Write a gem description
+A wrapper gem for iSMS API (www.isms.com.my).
+
+Currently only supports sending SMS.
 
 ## Installation
 
@@ -24,7 +26,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/isms-ruby/fork )
+1. Fork it ( https://github.com/ernsheong/isms-ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
