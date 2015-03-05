@@ -2,11 +2,11 @@ require 'isms/version'
 
 module ISMS
   module Configuration
-    DEFAULT_ENDPOINT = "https://api.moolah.io"
-    DEFAULT_API_KEY = nil
-    DEFAULT_API_SECRET = nil
+    DEFAULT_PROTOCOL = 'http'
+    DEFAULT_USERNAME = nil
+    DEFAULT_PASSWORD = nil
 
-    attr_accessor :api_key, :api_secret, :ipn, :endpoint
+    attr_accessor :username, :password, :protocol
 
     # When extended, call reset to set variable values to defaults
     def self.extended(mod)
@@ -14,9 +14,9 @@ module ISMS
     end
 
     def reset
-      self.api_key = DEFAULT_API_KEY
-      self.api_secret = DEFAULT_API_SECRET
-      self.endpoint = DEFAULT_ENDPOINT
+      self.username = DEFAULT_USERNAME
+      self.password = DEFAULT_PASSWORD
+      self.protocol = DEFAULT_PROTOCOL
     end
 
     def configure
