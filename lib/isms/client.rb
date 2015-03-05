@@ -1,4 +1,5 @@
 require 'isms/configuration'
+require 'faraday'
 
 module ISMS
   class Client
