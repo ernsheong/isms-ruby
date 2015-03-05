@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'isms/ruby/version'
+require 'isms/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "isms-ruby"
-  spec.version       = Isms::Ruby::VERSION
+  spec.version       = ISMS::VERSION
   spec.authors       = ["Jonathan ES Lin"]
   spec.email         = ["ernsheong@gmail.com"]
   spec.summary       = %q{An API wrapper gem for iSMS.}
