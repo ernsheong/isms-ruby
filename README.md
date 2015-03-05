@@ -1,6 +1,8 @@
 ## isms-ruby
 
-A wrapper gem for iSMS API (www.isms.com.my).
+A wrapper gem for iSMS (Malaysia) API.
+
+Check [www.isms.com.my](www.isms.com.my) for API documentation.
 
 Currently only supports sending SMS.
 
