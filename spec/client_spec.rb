@@ -20,7 +20,7 @@ describe ISMS::Client do
         allow(ISMS).to receive(:username).and_return("username")
       end
 
-      it "should not complain if API key is given" do
+      it "should not complain if password and username is given" do
         expect { ISMS::Client.new }.not_to raise_error
       end
     end
@@ -45,6 +45,21 @@ describe ISMS::Client do
         result = client.send_sms('Hi there!', '60121231234')
         expect(result[:code]).to eq(200)
         expect(result[:description]).to eq('SUCCESS')
+      end
+    end
+
+    context 'unsuccessful send' do
+      let(:failure_response) { "-1001 = AUTHENTICATION FAILED" }
+
+      before do
+        allow(client).to receive(:connection).and_return(test_connection)
+        request_stubs.post(send_sms_url) { |env| [ 200, {}, failure_response ] }
+      end
+
+      it 'sends successfully' do
+        result = client.send_sms('Hi there!', '60121231234')
+        expect(result[:code]).to eq(-1001)
+        expect(result[:description]).to eq('AUTHENTICATION FAILED')
       end
     end
   end
