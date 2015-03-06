@@ -26,21 +26,26 @@ Or install it yourself as:
 
 In an initializer file, configure as follows:
 
-    require 'isms'
+```ruby
+require 'isms'
 
-    ISMS.configure do |config|
-      config.username = ENV['ISMS_USERNAME'] || 'username'
-      config.password = ENV['ISMS_PASSWORD'] || 'password'
-      config.protocol = 'https'
-    end
+ISMS.configure do |config|
+  config.username = ENV['ISMS_USERNAME'] || 'username'
+  config.password = ENV['ISMS_PASSWORD'] || 'password'
+  config.protocol = 'https'
+end
+```
 
 Then, initialize a client and send an SMS as follows:
 
-    client = ISMS::Client.new
-    response = client.send_sms('Hello world!', '60121231234')
+```ruby
+client = ISMS::Client.new
+response = client.send_sms('Hello world!', '60121231234')
 
-    # => { code: 200, description: 'SUCCESS' }
-    # => { code: -1001, description: 'AUTHENTICATION FAILED' } etc.
+# => { code: 200, description: 'SUCCESS' }
+# => { code: -1001, description: 'AUTHENTICATION FAILED' }
+# etc.
+```
 
 Check out other response codes at [http://isms.com.my/response_result.php](http://isms.com.my/response_result.php)
 
