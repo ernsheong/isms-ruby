@@ -38,11 +38,18 @@ module ISMS
     end
 
     def parse_response(body)
-      result_array = body.split('=')
-      {
-          code: result_array.first.strip.to_i,
-          description: result_array.last.strip
-      }
+      if body && body.index('=')
+        result_array = body.split('=')
+        {
+            code: result_array.first.strip.to_i,
+            description: result_array.last.strip
+        }
+      else
+        {
+            code: 200,
+            description: 'SUCCESS'
+        }
+      end
     end
   end
 end
