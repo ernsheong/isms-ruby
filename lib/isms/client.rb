@@ -14,6 +14,7 @@ module ISMS
     # Returns Hash of :code and :description
     # code has the error code number
     # description is the error description
+    # http://www.isms.com.my/sms_api.php#SendSMS_Response
     #
     def send_sms(message_body, phone_no, type = 1)
       request_body = {}
